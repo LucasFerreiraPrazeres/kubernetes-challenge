@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  NAME: "Lucas Ferreira Prazeres"
+kind: ConfigMap
+metadata:
+  name: node-configmap
+  namespace: lucas

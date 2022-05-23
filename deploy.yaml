@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: node
+  name: node
+  namespace: lucas
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: node
+  template:
+    metadata:
+      labels:
+        app: node
+    spec:
+      containers:
+      -  image: node:8-alpine
+         name: node
+         env:
+          - name: NAME
+            valueFrom:
+              configMapKeyRef:
+                name: nodeconfigmap
+                key: NAME
